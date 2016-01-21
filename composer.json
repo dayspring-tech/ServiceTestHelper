@@ -1,0 +1,10 @@
+{
+    "name": "dayspring-tech/UnitTestBundle",
+    "require": {
+    },
+	"autoload": {
+        "psr-4": {
+            "Dayspring\\UnitTestBundle\\": ""
+        }
+    }
+}
