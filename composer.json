@@ -1,5 +1,16 @@
 {
-    "name": "dayspring-tech/UnitTestBundle",
+    "name": "dayspring-tech/unit-test-bundle",
+    "description":  "Helper for testing services",
+    "keywords":     [],
+    "type":         "symfony-bundle",
+    "license":      "MIT",
+    "authors":     [
+        {
+            "name":     "Jeffrey Wong",
+            "email":    "jwong@dayspring-tech.com",
+            "homepage": "http://dayspring-tech.com"
+        }
+    ],
     "require": {
     },
 	"autoload": {
