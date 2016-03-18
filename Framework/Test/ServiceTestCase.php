@@ -1,11 +1,11 @@
 <?php
 
-namespace Dayspring\UnitTestBundle\Framework\Test;
+namespace Dayspring\ServiceTestHelper\Framework\Test;
 
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
-abstract class DatabaseTestCase extends \PHPUnit_Framework_TestCase
+abstract class ServiceTestCase extends \PHPUnit_Framework_TestCase
 {
     static protected $class;
     static protected $kernel;
