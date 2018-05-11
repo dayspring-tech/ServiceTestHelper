@@ -4,8 +4,9 @@ namespace Dayspring\ServiceTestHelper\Framework\Test;
 
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
+use PHPUnit\Framework\TestCase;
 
-abstract class ServiceTestCase extends \PHPUnit_Framework_TestCase
+abstract class ServiceTestCase extends TestCase
 {
     static protected $class;
     static protected $kernel;
@@ -16,7 +17,7 @@ abstract class ServiceTestCase extends \PHPUnit_Framework_TestCase
      * @param array   $options An array of options to pass to the createKernel class
      * @param array   $server  An array of server parameters
      *
-     * @return Client A Client instance
+     * @return mixed A service instance
      */
     static protected function createService($id)
     {
@@ -134,7 +135,8 @@ abstract class ServiceTestCase extends \PHPUnit_Framework_TestCase
         );
     }
 
-    protected function callMethod($obj, $name, array $args) {
+    protected function callMethod($obj, $name, array $args)
+    {
         $class = new \ReflectionClass($obj);
         $method = $class->getMethod($name);
         $method->setAccessible(true);

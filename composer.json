@@ -12,10 +12,18 @@
         }
     ],
     "require": {
+        "php": ">=7.0",
+        "symfony/framework-bundle": "~3.0",
+        "symfony/symfony": "^3.0",
+        "phpunit/phpunit": "^6.0"
+
     },
-	"autoload": {
+    "autoload": {
         "psr-4": {
             "Dayspring\\ServiceTestHelper\\": ""
-        }
+        },
+        "exclude-from-classmap": [
+            "Tests/"
+        ]
     }
 }
