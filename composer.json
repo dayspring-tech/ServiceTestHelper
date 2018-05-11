@@ -1,7 +1,10 @@
 {
     "name": "dayspring-tech/service-test-helper",
     "description":  "Helper for testing services",
-    "keywords":     [],
+    "keywords":     [
+        "unit test",
+        "symfony service"
+    ],
     "type":         "symfony-bundle",
     "license":      "MIT",
     "authors":     [
