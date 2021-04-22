@@ -10,14 +10,19 @@
     "authors":     [
         {
             "name":     "Jeffrey Wong",
-            "email":    "jwong@dayspring-tech.com",
-            "homepage": "http://dayspring-tech.com"
+            "email":    "jwong@dayspringpartners.com",
+            "homepage": "https://dayspringpartners.com"
+        },
+        {
+            "name":     "Stanley Situ",
+            "email":    "ssitu@dayspringpartners.com",
+            "homepage": "https://dayspringpartners.com"
         }
     ],
     "require": {
         "php": ">=7.0",
-        "symfony/framework-bundle": "~3.0",
-        "symfony/symfony": "^3.0",
+        "symfony/framework-bundle": "^3.4|^4.0",
+        "symfony/symfony": "^3.4|^4.0",
         "phpunit/phpunit": "^6.0"
 
     },
@@ -27,6 +32,12 @@
         },
         "exclude-from-classmap": [
             "Tests/"
+        ]
+    },
+    "scripts": {
+        "ci-test": [
+            "Composer\\Config::disableProcessTimeout",
+            "vendor/phpunit/phpunit/phpunit -c ./phpunit.xml.dist"
         ]
     }
 }
