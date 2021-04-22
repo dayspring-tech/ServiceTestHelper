@@ -33,5 +33,11 @@
         "exclude-from-classmap": [
             "Tests/"
         ]
+    },
+    "scripts": {
+        "ci-test": [
+            "Composer\\Config::disableProcessTimeout",
+            "vendor/phpunit/phpunit/phpunit -c ./phpunit.xml.dist"
+        ]
     }
 }
