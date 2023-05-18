@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+    symfony:
+        build:
+            context: ./symfony
+            args:
+                PHP_VERSION: 8.1
+        image: '${COMPOSE_PROJECT_NAME}/${REPOSITORY_NAME}_symfony:${IMAGE_TAG}'
+        container_name: '${REPOSITORY_NAME}_symfony'
+        hostname: '${REPOSITORY_NAME}-symfony'
+        volumes:
+            - symfony-app:/usr/src/symfony
+
+volumes:
+    symfony-app: {}
