@@ -15,9 +15,11 @@ class ServiceTestCaseTest extends ServiceTestCase
 
     public function testCreateService()
     {
-        $routing = static::$kernel->getContainer()->get('router');
-        $testService = self::createService('router');
+        $this->assertNotEmpty(static::$kernel->getContainer()->getServiceIds());
 
-        $this->assertEquals($routing, $testService);
+        $kernel = static::$kernel->getContainer()->get('kernel');
+        $testService = self::createService('kernel');
+
+        $this->assertEquals($kernel, $testService);
     }
 }
