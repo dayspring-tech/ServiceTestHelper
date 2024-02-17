@@ -11,17 +11,16 @@ class TestKernel extends Kernel
     {
         return __DIR__.'/Resources';
     }
-    public function registerBundles()
+    public function registerBundles(): iterable
     {
-        return array(
-        );
+        return [];
     }
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
         $loader->load(__DIR__.'/Resources/config/config_test.yml');
         if (class_exists('Symfony\Component\Asset\Package')) {
             $loader->load(function (ContainerBuilder $container) {
-                $container->loadFromExtension('framework', array('assets' => array()));
+                $container->loadFromExtension('framework', ['assets' => []]);
             });
         }
     }
