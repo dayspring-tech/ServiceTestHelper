@@ -10,8 +10,17 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: [ '7.4', '8.0', '8.1' ]
-        composer: [ '', '--prefer-lowest' ]
+        php: 
+          - '7.4'
+          - '8.0'
+          - '8.1'
+          - '8.2'
+          - '8.3'
+          - '8.4' 
+        composer:
+          - '' 
+          - '-W --with "symfony/http-kernel":^5.0 "symfony/config":^5.0 "symfony/yaml":^5.0 "symfony/dependency-injection":^5.0'
+          - '--prefer-lowest'
 
     steps:
       - uses: actions/checkout@v3
