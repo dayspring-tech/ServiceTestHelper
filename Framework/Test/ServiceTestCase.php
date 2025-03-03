@@ -94,7 +94,7 @@ abstract class ServiceTestCase extends TestCase
      */
     static protected function getKernelClass()
     {
-        $dir = isset($_SERVER['KERNEL_DIR']) ? $_SERVER['KERNEL_DIR'] : static::getPhpUnitXmlDir();
+        $dir = $_SERVER['KERNEL_DIR'] ?? static::getPhpUnitXmlDir();
 
         $finder = new Finder();
         $finder->name('*Kernel.php')->depth(0)->in($dir);
@@ -123,15 +123,15 @@ abstract class ServiceTestCase extends TestCase
      *
      * @return HttpKernelInterface A HttpKernelInterface instance
      */
-    static protected function createKernel(array $options = array())
+    static protected function createKernel(array $options = [])
     {
         if (null === static::$class) {
             static::$class = static::getKernelClass();
         }
 
         return new static::$class(
-            isset($options['environment']) ? $options['environment'] : 'test',
-            isset($options['debug']) ? $options['debug'] : true
+            $options['environment'] ?? 'test',
+            $options['debug'] ?? true
         );
     }
 
